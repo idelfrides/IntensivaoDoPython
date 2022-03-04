@@ -1,24 +1,10 @@
 
 
-
-
 def run_app():
 
     print(f'\n\n\n THIS IS INTENSIVAO DO PYTHON SHORT COURSE \n')
 
-
     return
-
-
-
-
-
-
-
-
-
-
-
 
 
 
