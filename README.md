@@ -23,7 +23,7 @@ Intensivão do python promovido pela Lira da Hashtag
     -- Enviar e-mail para qualquer pessoa.
 
 
-### AULA 2: AUTOMAÇÃO DE TAREFAS REPETITIVAS | 2020-03-08
+### AULA 2: ANÁLISE DADOS COM PYTHON USANDO PANDAS | 2020-03-08
 
 
 
