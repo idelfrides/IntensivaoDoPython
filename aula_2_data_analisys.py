@@ -34,6 +34,7 @@ pyautogui.PAUSE = 1
 
 
 def data_analisys():
+    print('\n\n PROJETO DE ANALISE DADOS COM PANDAS [ ongoing ] ...')
 
     # -----------------------------------------------------------------
     # passo 1: importar a base de dados para o python
@@ -89,7 +90,7 @@ def data_analisys():
 
         # etapa 2: mostrar o gráfico
         chart.show()
-        time.sleep(30)
+        time.sleep(20)
 
 
     # CONCLUSÕES:

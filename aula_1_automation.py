@@ -31,6 +31,8 @@ pyautogui.PAUSE = 1
 
 def task_automation():
 
+    print('\n\n AUTOMACAO COM PYAUTOGUI [ ongoing ] ...')
+
     remove_data_files()
     time.sleep(5)
 

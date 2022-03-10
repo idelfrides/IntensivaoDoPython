@@ -62,6 +62,7 @@ FILES_PATH = os.path.dirname(os.path.abspath(__file__))
 
 
 def web_scraping_selenium():
+    print('\n\n WEBSCRAPING COM SELENIUM E ANALISE DA DADOS [ ongoing ] ...')
 
     # passo 1: criar/abrir o browser
     browser = webdriver.Chrome()
@@ -142,5 +143,4 @@ def web_scraping_selenium():
     product_content.to_excel(real_path, index=False)
 
     print('EXPORT FILE DONE')
-
-    time.sleep(60*60)
+    print('\n DONE \n')
