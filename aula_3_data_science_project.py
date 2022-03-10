@@ -1,10 +1,11 @@
 
 """
-ESCREVER O PASSO-A-PASSO  EM PORTUGUÊS
-----------------------------------------
 
-DESAFIO: recuperar as cotações atualizadas de Dólar, do Euro e do Ouro e atualizar os valores de compra e vendas de
------------
+DESAFIO: recuperar as cotações atualizadas de Dólar, do Euro e do Ouro e atualizar os valores de compra e vendas de produtos.
+
+-----------------------------------------------------------
+
+ESCREVER O PASSO-A-PASSO  EM PORTUGUÊS
 
 passo 1: criar/abrir o browser
 passo 2: entrar no SITE DO GOOGLE  e pesguigar a cotação do DÓLAR
@@ -29,8 +30,6 @@ passo 9: atulizar indicadores
 passo 10: export a base de dados atualizada
 
 
-
-
 SELENIUM
 
 - funciona em segundo plano, enquanto vc está realizando outras tarefas
@@ -38,16 +37,8 @@ SELENIUM
 - funciona independente da resolução da tela do seu laptop
 -
 
-
+-------------------------------------------------------------------------------
 """
-
-# pyautogui -> automatiza o mouse, teclado e o seu tela
-# pypercli
-# sempre q foi trabalhar com base de dados, usar pandas
-# pandas, numpy, openpyxl
-
-# -----------------------------------------------------------------------------
-
 
 import os
 import time
@@ -122,10 +113,10 @@ def web_scraping_selenium():
     print(product_content.info())
 
     # passo 9: atulizar indicadores
-    #
-    # a) atualizar as cotações
-    # b) preco de compra = preco original * cotacao
-    # c) preco de venda = preco de compra * * margem
+
+        # a) atualizar as cotações
+        # b) preco de compra = preco original * cotacao
+        # c) preco de venda = preco de compra * * margem
 
     # product_content.loc[linhas, colunas] = valor_atualizado
     product_content.loc[product_content['Moeda'] == 'Dólar', 'Cotação'] = float(cotacao_dolar)
