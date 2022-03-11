@@ -8,6 +8,7 @@ from automation_my_linkedin import make_post_linkedin
 from aula_1_automation import task_automation
 from aula_2_data_analisys import data_analisys
 from aula_3_data_science_project import web_scraping_selenium
+from aula_4_datascience_AI_project import data_science_AI
 
 
 def run_app(choice):
@@ -20,6 +21,8 @@ def run_app(choice):
         data_analisys()             # aula 2
     elif choice == 3:
         web_scraping_selenium()     # aula 3
+    elif choice == 4:
+        data_science_AI()           # aula 4
     else:
         make_post_linkedin()        # make post in my linkedin
 
@@ -40,7 +43,8 @@ def menu():
             1 --> AUTOMACAO COM PYAUTOGUI ( envio de email eutometico)
             2 --> PROJETO DE ANALISE DADOS COM PANDAS ( resultados em graficos)
             3 --> WEBSCRAPING COM SELENIUM E ANALISE DA DADOS
-            4 --> MAKE POST IN MY LINKEDIN ACCCOUNT
+            4 --> DATA SCIENCE AND ARTIFICIAL INTELIGENCE PROJECT
+            5 --> MAKE POST IN MY LINKEDIN ACCCOUNT
             0 --> QUIT APP
         ''')
 
@@ -50,12 +54,10 @@ def menu():
             print(f'AVISO: OPCAO INVALIDA')
             response_ = 'BAD'
 
-        if response_ in (0, 1, 2, 3, 4):
+        if response_ in (0, 1, 2, 3, 4, 5):
             break
 
     return response_
-
-
 
 
 if __name__ == '__main__':
