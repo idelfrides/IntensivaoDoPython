@@ -7,7 +7,7 @@ import time
 from automation_my_linkedin import make_post_linkedin
 from aula_1_automation import task_automation
 from aula_2_data_analisys import data_analisys
-from aula_3_data_science_project import web_scraping_selenium
+from aula_3_web_scraping_selenium import web_scraping_selenium
 from aula_4_datascience_AI_project import data_science_AI
 
 
