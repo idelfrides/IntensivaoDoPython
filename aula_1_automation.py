@@ -21,6 +21,7 @@ passo 5: enviar um email pra a diretoria com os indicadores
 
 import os
 import time
+from h11 import DONE
 import pyautogui
 import pyperclip
 import pandas as pd
@@ -30,8 +31,9 @@ pyautogui.PAUSE = 1
 
 
 def task_automation():
-
-    print('\n\n AUTOMACAO COM PYAUTOGUI [ ongoing ] ...')
+    print('-'*8)
+    print('\n AUTOMACAO COM PYAUTOGUI [ ongoing ] ...\n')
+    print('-'*80)
 
     remove_data_files()
     time.sleep(5)
@@ -45,7 +47,7 @@ def task_automation():
 
     pyautogui.hotkey('Ctrl', 'v')
     pyautogui.press('enter')
-    time.sleep(5)
+    time.sleep(7)
 
     # ------------------------------------------------------------
     # passo 2: navegar no sistema ate encontar a base de dados
@@ -53,7 +55,7 @@ def task_automation():
 
     # abrir diretorio exportar
     pyautogui.click(x=438, y=344, clicks=2)
-    time.sleep(4)
+    time.sleep(5)
 
     # --------------------------------------------------------
     # passo 3: exprovar a base de vendas
@@ -61,34 +63,35 @@ def task_automation():
 
     # 1 click no arquivo
     pyautogui.click(x=448, y=344, clicks=1)
-    time.sleep(1)
+    time.sleep(3)
 
     # 1 click no MENU
     pyautogui.click(x=1686, y=243)
-    time.sleep(2)
+    time.sleep(3)
 
     # 1 click para download do arquivo ( base de dados de vendas )
     pyautogui.click(x=1454, y=643)
     time.sleep(5)
 
     # click em ok para confirmar
+    # download_time = 20
+    download_time = 1
     pyautogui.click(x=1108, y=668)
-    time.sleep(10)
+
+    print(f'\n\n WAIT [ {download_time} minute(s) ] TO COMPLETE  DOWNLOAD... \n\n')
+    time.sleep(download_time * 60)
 
     # ------------------------------------------------------------
     # passo 4: calcular os indicadores
     #   (faturamento e quantidade de produtos vendidos)
     # ------------------------------------------------------------
 
-
     try:
         sell_content = pd.read_excel(r'/home/ijdev/Downloads/Vendas - Dez.xlsx')
     except Exception as err:
         print(f'EXCEPTION: {err}')
         sell_content = 'NO SELL CONTENT'
-
-
-    # r'' -> raw string ( path string )
+        return
 
     print(sell_content)
 
@@ -103,7 +106,7 @@ def task_automation():
     # passo 5: enviar um email pra a diretoria com os indicadores
     # ----------------------------------------------------------------
 
-    print('\n\n ENVIANDO EMAIL...')
+    print('\n\n ENVIANDO EMAIL...\n\n')
 
     pyautogui.hotkey('ctrl', 't')
     pyperclip.copy('https://mail.google.com/mail/u/0/#inbox')
@@ -131,6 +134,10 @@ def task_automation():
     pyautogui.click(x=917, y=1044)
 
     print('\n\n EMAIL ENVIADO COM SUCESSO \n\n')
+
+    print('DONE')
+
+    return
 
 
 

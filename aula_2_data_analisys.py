@@ -34,7 +34,10 @@ pyautogui.PAUSE = 1
 
 
 def data_analisys():
-    print('\n\n PROJETO DE ANALISE DADOS COM PANDAS [ ongoing ] ...')
+
+    print('-'*80)
+    print('\n PROJETO DE ANALISE DADOS COM PANDAS [ ongoing ] ... \n')
+    print('-'*80)
 
     # -----------------------------------------------------------------
     # passo 1: importar a base de dados para o python
@@ -85,12 +88,14 @@ def data_analisys():
 
     for column in telecom_content.columns:
 
+        print(f'\n SHOWING CHART --> {column}...\n ')
+
         # etapa 1: criar o gráfico
         chart = px.histogram(telecom_content, x=column, color='Churn')
 
-        # etapa 2: mostrar o gráfico
+        # etapa 2: mostrar o gráfico no browser padrão do seu sistema operacional
         chart.show()
-        time.sleep(20)
+        time.sleep(1)
 
 
     # CONCLUSÕES:
@@ -100,3 +105,7 @@ def data_analisys():
 
 
     '''
+
+    print('DONE')
+
+    return

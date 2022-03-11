@@ -62,7 +62,10 @@ FILES_PATH = os.path.dirname(os.path.abspath(__file__))
 
 
 def web_scraping_selenium():
-    print('\n\n WEBSCRAPING COM SELENIUM E ANALISE DA DADOS [ ongoing ] ...')
+
+    print('-'*80)
+    print('\n WEBSCRAPING COM SELENIUM E ANALISE DA DADOS [ ongoing ] ... \n')
+    print('-'*80)
 
     # passo 1: criar/abrir o browser
     browser = webdriver.Chrome()
@@ -119,7 +122,6 @@ def web_scraping_selenium():
         # b) preco de compra = preco original * cotacao
         # c) preco de venda = preco de compra * * margem
 
-    # product_content.loc[linhas, colunas] = valor_atualizado
     product_content.loc[product_content['Moeda'] == 'Dólar', 'Cotação'] = float(cotacao_dolar)
 
     product_content.loc[product_content['Moeda'] == 'Euro', 'Cotação'] = float(cotacao_euro)
@@ -136,11 +138,11 @@ def web_scraping_selenium():
         product_content['Preço de Compra'] * product_content['Margem']
     )
 
-    # print(product_content)
-
     # passo 10: export a base de dados atualizada
     real_path = '/'.join([FILES_PATH, 'utils', 'Produtos_new.xlsx'])
     product_content.to_excel(real_path, index=False)
 
     print('EXPORT FILE DONE')
     print('\n DONE \n')
+
+    return
