@@ -7,27 +7,15 @@ DESAFIO: recuperar as cotações atualizadas de Dólar, do Euro e do Ouro e atua
 
 ESCREVER O PASSO-A-PASSO  EM PORTUGUÊS
 
-passo 1: criar/abrir o browser
-passo 2: entrar no SITE DO GOOGLE  e pesguigar a cotação do DÓLAR
-passo 3: recuperar a cotação do dólar
+Passo a Passo de um Projeto de Ciência de Dados
 
-passo 4: entrar no SITE DO GOOGLE e pesguigar a cotação do EURO
-passo 5: recuperar a cotação do EURO
-
-passo 6: entrar no navegador e pesguigar a cotação do OURO no site a seguir
-
---> https://www.melhorcambio.com/ouro-hoje
-
-passo 7: recuperar a cotação do OURO
-
-passo 8: import a base de dados
-
-passo 9: atulizar indicadores
-    a) atualizar as cotações
-    b) preco de compra = preco original * cotacao
-    c) preco de venda = preco de compra * * margem
-
-passo 10: export a base de dados atualizada
+- Passo 1: Entendimento do Desafio
+- Passo 2: Entendimento da Área/Empresa
+- Passo 3: Extração/Obtenção de Dados
+- Passo 4: Ajuste de Dados (Tratamento/Limpeza)
+- Passo 5: Análise Exploratória
+- Passo 6: Modelagem + Algoritmos (Aqui que entra a Inteligência Artificial, se necessário)
+- Passo 7: Interpretação de Resultados
 
 
 SELENIUM
@@ -45,9 +33,12 @@ import time
 import pyautogui
 import pyperclip
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns   # lib created using matplotbib
-import plotly.express as px
+
+# python package for building chart
+
+import matplotlib.pyplot as plt    # the main one
+import seaborn as sns              # lib created using matplotbib
+import plotly.express as px        #
 
 pyautogui.PAUSE = 1
 
@@ -60,9 +51,11 @@ FILES_PATH = os.path.dirname(os.path.abspath(__file__))
 
 
 def data_science_AI():
-    print('\n\n DATA SCIENTE AND ARTIFICIAL INTELIGENCE PROJECT [ ongoing ] ...')
+    print('\n\n DATA SCIENTE AND AI PROJECT [ ongoing ] ...')
 
-    # passo 1: importar a base de dados
+    # passo 1 | passo 2: all done
+    # passo 3: done
+
     try:
         real_path = '/'.join([FILES_PATH, 'utils', 'advertising.csv'])
         ads_content = pd.read_csv(real_path)
@@ -73,36 +66,20 @@ def data_science_AI():
     print(ads_content)
     print(ads_content.info())
 
-    # passo 9: atulizar indicadores
+    # Passo 4: Ajuste de Dados (Tratamento/Limpeza)  done
 
-        # a) atualizar as cotações
-        # b) preco de compra = preco original * cotacao
-        # c) preco de venda = preco de compra * * margem
+    # Passo 5: Análise Exploratória
 
-    # product_content.loc[linhas, colunas] = valor_atualizado
-    '''
-    product_content.loc[product_content['Moeda'] == 'Dólar', 'Cotação'] = float(cotacao_dolar)
+        # a) visualizar como as informações de cada item são distribuídas
+        # b) ver a correlação entre cada um dos itens
 
-    product_content.loc[product_content['Moeda'] == 'Euro', 'Cotação'] = float(cotacao_euro)
+    sns.heatmap(ads_content.corr(), cmap='Wistia', annot=True)
+    plt.show()
 
-    product_content.loc[product_content['Moeda'] == 'Ouro', 'Cotação'] = float(cotacao_ouro)
+    # passo 6:Modelagem + Algoritmos (Aqui que entra a Inteligência Artificial, se necessário)
 
-    # b) preco de compra = preco original * cotacao
-    product_content['Preço de Compra'] = (
-        product_content['Preço Original'] * product_content['Cotação']
-    )
+    # prapare content for training  and testing our AI
 
-    # c) preco de venda = preco de compra * margem
-    product_content['Preço de Venda'] = (
-        product_content['Preço de Compra'] * product_content['Mrgem']
-    )
+    
 
-    # print(product_content)
-
-    # passo 10: export a base de dados atualizada
-    real_path = '/'.join([FILES_PATH, 'utils', 'Produtos_new.xlsx'])
-    product_content.to_excel(real_path, index=False)
-
-    print('EXPORT FILE DONE')
-    print('\n DONE \n')
-    '''
+    print('DONE')
