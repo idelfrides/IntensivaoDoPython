@@ -84,6 +84,7 @@ Intensivão do python promovido pela Lira da Hashtag
     - Passo 6: Modelagem + Algoritmos (Aqui que entra a Inteligência Artificial, se necessário)
     - Passo 7: Interpretação de Resultados
 
+----
 
 ### STEPS TO USE/RUN THIS REPOSITORY LOCALLY
 
@@ -108,6 +109,6 @@ If you are using fish, write
 
      pip install -r requirements.txt
 
-### 8 | Now you can run the application
+### 5 | Now you can run the application
 
      python main_app.py
