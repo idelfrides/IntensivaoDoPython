@@ -83,3 +83,31 @@ Intensivão do python promovido pela Lira da Hashtag
     - Passo 5: Análise Exploratória
     - Passo 6: Modelagem + Algoritmos (Aqui que entra a Inteligência Artificial, se necessário)
     - Passo 7: Interpretação de Resultados
+
+
+### STEPS TO USE/RUN THIS REPOSITORY LOCALLY
+
+### 1 | Clone the remote repository to start testing
+
+    git clone https://github.com/idelfrides/IntensivaoDoPython.git
+
+
+### 2 | Create your virtualenv like
+
+     virtualenv [your_venv_name]
+
+### 3 | Virtualenv activation
+
+     source [your_venv_name]/bin/activate
+
+If you are using fish, write
+
+     source [your_venv_name]/bin/activate.fish
+
+### 4 | Install requirements
+
+     pip install -r requirements.txt
+
+### 8 | Now you can run the application
+
+     python main_app.py
