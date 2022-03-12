@@ -72,7 +72,7 @@ def run_all_apps():
 
 if __name__ == '__main__':
 
-    sleep_minutes = 0
+    sleep_minutes = 2
 
     while True:
         response_ = menu()
